@@ -1,0 +1,69 @@
+{% load static %}
+
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+  <link rel='stylesheet' href="{% static 'GoT_CharacterClassifier/styles.css' %}">
+  <script src="{% static 'GoT_CharacterClassifier/client.js' %}"></script>
+</head>
+
+<body>
+  <div>
+    <div class='center'>
+      <div class='title'>Game of Thrones 👑 Character Recognizer</div>
+      <p>
+        Use individual images of <strong> <a href="https://shorturl.at/eixG3" target="_blank">Tyrion Lanister</a> </strong> or <a
+          href="https://shorturl.at/vzEX2" target="_blank">Peter Dinklage</a>, <strong><a
+            href="https://shorturl.at/hsvD5" target="_blank">Daenerys Targaryen</a> </strong> or <a
+          href="https://shorturl.at/aqwDN" target="_blank">Emilia Clarke</a>,
+        <strong><a href="https://shorturl.at/jyGQ7" target="_blank"> Sansa Stark</a> </strong> or <a
+          href="https://shorturl.at/tzPTV" target="_blank"> Sophie Turner</a>.
+        Created with an exported model of a trained Deep Neural Network.
+      </p>
+      <div class='content'>
+        <div class='no-display'>
+
+          {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+          <form enctype="multipart/form-data" action="{% url 'GoT_CharacterClassifier:result' %}" method="post">
+
+            {% csrf_token %}
+
+            <input id='file-input' class='no-display' type='file' name='file' accept='image/*'
+              onchange='showPicked(this)' value="{{ image }}">
+        </div>
+        <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
+        <div class='upload-label'>
+          <label id='upload-label'>No file chosen</label>
+        </div>
+        <div>
+          <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
+        </div>
+        <div class='analyze'>
+          <button id='analyze-button' class='analyze-button' type="submit" onclick="analyze();">Analyze</button>
+        </div>
+        <div style="padding-top: 1%">
+          <button id='analyze-button' class='analyze-button' type="button"
+            onclick="window.location.href = '/GoT_CharacterClassifier';">New Analysis</button>
+        </div>
+        </form>
+        <div class='result-label'>
+          <h2>{{ character }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Powered by Django, FastAI and Pytorch.</p>
+    <p>© Hady Salama 2019</p>
+    <p>Contact for More Details:</p>
+    <p><a href="mailto:salama.hady@hotmail.com"> salama.hady@hotmail.com</a>
+      <p>
+        <p><a href="tel:440-454-3940">440-454-3940</a></p>
+        <p><a href="https://www.linkedin.com/in/hady-s-54bb49139/" target="_blank">LinkedIn</a>
+  </footer>
+</body>
+
+</html>
