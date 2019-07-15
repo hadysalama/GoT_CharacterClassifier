@@ -119,7 +119,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = 'mysite/GoT_CharacterClassifier/static/'
+STATIC_URL = 'project/src/mysite/GoT_CharacterClassifier/static/'
 
 # HTTPS Security
 # python manage.py runsslserver
