@@ -119,7 +119,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = 'project/src/mysite/GoT_CharacterClassifier/static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(SITE_ROOT, '..', 'static'),
+)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 
 # HTTPS Security
 # python manage.py runsslserver
