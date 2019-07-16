@@ -2,6 +2,7 @@
   "name": "GoT_CharacterClassifier",
   "version": 2,
   "public": true,
+  "config": { "maxLambdaSize": "100mb" }
   "builds": [
     {
       "src": "mysite/mysite/wsgi.py",
