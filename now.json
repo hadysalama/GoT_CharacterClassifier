@@ -4,7 +4,7 @@
     "builds": [{
         "src": "mysite/mysite/wsgi.py",
         "use": "@ardnt/now-python-wsgi",
-        "config": { "maxLambdaSize": "50mb" }
+        "config": { "maxLambdaSize": "400mb" }
     }],
     "routes": [
         {
