@@ -26,7 +26,7 @@ SECRET_KEY = '6i#f-(x6mw*16l$z&n_v8i7ry$dvj#(*04iq%9byy30a==z-gb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['now.sh'] #env.list('DJANGO_ALLOWED_HOSTS', default=[env('RENDER_EXTERNAL_HOSTNAME', default='')])
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=[env('RENDER_EXTERNAL_HOSTNAME', default='')]) #['now.sh']
 
 
 # Application definition
