@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "name": "GoT_CharacterClassifier",
+    "builds": [{
+        "src": "mysite/mysite/wsgi.py",
+        "use": "@ardnt/now-python-wsgi",
+        "config": { "maxLambdaSize": "100mb" }
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "mysite/mysite/wsgi.py"
+        }
+    ]
+}
