@@ -1,0 +1,20 @@
+{
+  "name": "python-django",
+  "version": 1,
+  "public": true,
+  "builds": [
+    {
+      "src": "mysite/GoT_CharacterClassifier/app.py",
+      "use": "@now/python"
+    },
+    { "src": "mysite/GoT_CharacterClassifier/static/GoT_CharacterClassifier/css/**", "use": "@now/static" },
+    { "src": "mysite/GoT_CharacterClassifier/static/GoT_CharacterClassifier/js/**", "use": "@now/static" },
+    { "src": "mysite/GoT_CharacterClassifier/templates/GoT_CharacterClassifier/**", "use": "@now/templates" },
+  ],
+  "routes": [
+    { "src": "mysite/GoT_CharacterClassifier/static/GoT_CharacterClassifier/css/(.*)", "dest": "css/$1" },
+    { "src": "mysite/GoT_CharacterClassifier/static/GoT_CharacterClassifier/js/(.*)", "dest": "js/$1" },
+    { "src": "mysite/GoT_CharacterClassifier/templates/GoT_CharacterClassifier/(.*)", "dest": "templates/$1" },
+    { "src": "mysite/GoT_CharacterClassifier/(.*)", "dest": "app.py" }
+  ]
+}
