@@ -1,6 +1,6 @@
 {
   "name": "python-django",
-  "version": 1,
+  "version": 1.0,
   "public": true,
   "builds": [
     {
