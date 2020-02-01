@@ -1,3 +1,4 @@
+--upgrade pip
 django --upgrade
 django-environ --upgrade # https://github.com/joke2k/django-environ
 gunicorn  --upgrade # https://github.com/benoitc/gunicorn
