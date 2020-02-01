@@ -1,12 +1,7 @@
-django
-django-environ # https://github.com/joke2k/django-environ
-gunicorn # https://github.com/benoitc/gunicorn
-fastai
+django==3.0.2
+django-environ==0.4.5  # https://github.com/joke2k/django-environ
+gunicorn==20.0.4  # https://github.com/benoitc/gunicorn
+fastai==1.0.60
 https://download.pytorch.org/whl/cpu/torch-1.1.0-cp37-cp37m-linux_x86_64.whl
 https://download.pytorch.org/whl/cpu/torchvision-0.3.0-cp37-cp37m-linux_x86_64.whl
-numpy
-django --upgrade
-django-environ --upgrade # https://github.com/joke2k/django-environ
-gunicorn  --upgrade # https://github.com/benoitc/gunicorn
-fastai --upgrade
-numpy --upgrade
+numpy==1.18.1
