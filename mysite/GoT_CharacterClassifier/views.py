@@ -8,20 +8,18 @@ from django.shortcuts import render
 import fastai.vision as Vision
 import os
 
+#Takes the image and runs it through the exported model via Pytorch CPU processing.
+module_dir = os.path.dirname(__file__)  # get current directory
+file_path = os.path.join(module_dir)
+learn = Vision.load_learner(file_path,'export.pkl')
+
 def index(request):
     #Renders main page.
 
     return render(request, 'GoT_CharacterClassifier/index.html')
 
-
-
 def result(request):
-    #Takes the image and runs it through the exported model via Pytorch CPU processing.
-
-    module_dir = os.path.dirname(__file__)  # get current directory
-    file_path = os.path.join(module_dir)
-
-    learn = Vision.load_learner(file_path,'export.pkl')
+    
     print("The values are " + str(request.POST.keys()))
 
     if request.POST.get('file') != "":
