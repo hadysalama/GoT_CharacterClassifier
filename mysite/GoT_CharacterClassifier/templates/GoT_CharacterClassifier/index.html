@@ -5,6 +5,8 @@
 <head>
   <meta charset='utf-8'>
   <link rel="manifest" href='{% static "/manifest.json" %}'>
+  <link rel="script" href='{% static "/client.js" %}'>
+  <link rel="style" href='{% static "/styles.css" %}'>
 </head>
 
 <body>
@@ -64,107 +66,4 @@
         <p><a href="https://www.linkedin.com/in/hady-s-54bb49139/" target="_blank">LinkedIn</a>
   </footer>
 </body>
-<script>
- var el = x => document.getElementById(x);
-
-function showPicker() {
-  el("file-input").click();
-}
-
-function showPicked(input) {
-  el("upload-label").innerHTML = input.files[0].name;
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    el("image-picked").src = e.target.result;
-    el("image-picked").className = "";
-  };
-  reader.readAsDataURL(input.files[0]);
-}
-
-function analyze() {
-  var uploadFiles = el("file-input").files;
-  if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
-  el("analyze-button").innerHTML = "Analyzing...";
-}
-</script>
- <style>
- body {
-    background-color: #2f2f31;
-    color: #f2f3f4;
-    font-family: "Consolas", Monaco, monospace;
-}
-
-.no-display {
-    display: none;
-}
-
-.center {
-    margin: auto;
-    padding: 10px 50px;
-    text-align: center;
-    font-size: 14px;
-}
-
-.title {
-    font-size: 30px;
-    margin-top: 1em;
-    margin-bottom: 1em;
-
-}
-
-.content {
-    margin-top: 10em;
-}
-
-.analyze {
-    margin-top: 5em;
-}
-
-.upload-label {
-    padding: 10px;
-    font-size: 12px;
-}
-
-.result-label {
-    margin-top: 0.5em;
-    padding: 10px;
-    font-size: 13px;
-}
-
-button.choose-file-button {
-    width: 200px;
-    height: 40px;
-    border-radius: 2px;
-    background-color: #f9f9f3;
-    border: solid 1px #ffffff;
-    font-size: 13px;
-    color: #1b1b1b;
-    font-family: "Consolas", Monaco, monospace;
-}
-
-button.analyze-button {
-    width: 200px;
-    height: 40px;
-    border: solid 3px #ffffff;
-    border-radius: 2px;
-    background-color: #f9f9f3;
-    font-size: 13px;
-    color: #1b1b1b;
-    font-family: "Consolas", Monaco, monospace;
-}
-
-button:focus {
-    outline: 0;
-}
-
-footer {
-    text-align: center;
-    font-size: 75%;
-    padding-top: 5%;
-}
-
-a {
-    color: FFFFFF;
-}
- </style>
 </html>
