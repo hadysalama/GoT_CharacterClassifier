@@ -65,6 +65,8 @@
   </footer>
 </body>
 <script>
+ if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/service-worker.js'); }
+  
  var el = x => document.getElementById(x);
 
 function showPicker() {
