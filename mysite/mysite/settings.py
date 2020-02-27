@@ -121,7 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = ''
+STATIC_ROOT = '/project/src/mysite/'
 
 # HTTPS Security
 # python manage.py runsslserver
