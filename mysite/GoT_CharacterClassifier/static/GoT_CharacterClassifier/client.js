@@ -1,4 +1,6 @@
-var el = x => document.getElementById(x);
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/service-worker.js'); }
+  
+ var el = x => document.getElementById(x);
 
 function showPicker() {
   el("file-input").click();
