@@ -1,0 +1,10 @@
+{
+    "name": "GoT_CharacterClassifier",
+    "short_name" : "PWA",
+    "start_url": "https://got-characterclassifier.onrender.com/GoT_CharacterClassifier/",
+    "scope" : "./",
+    "icons": [],
+    "theme_color": "#ffee00",
+    "background_color": "#ffee00",
+    "display": "standalone"
+}
